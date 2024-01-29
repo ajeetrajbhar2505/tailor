@@ -1,1 +1,55 @@
 
+.mobilebar-container {
+    position: fixed;
+    bottom: 15px;
+    z-index: 12;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mobilebar-tab {
+    height: 50px;
+    max-width : 420px;
+    width: 90vw;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    flex-shrink: 0;
+    bottom: 0px;
+}
+
+.mobilebar-tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 5);      
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.mobilebar-tab-item.active {
+    width: 105px;
+    width: 16vw;
+    width: calc(100% / 5);
+    max-width: 105px;
+    background-color: #f0f0f0;
+
+}
+
+.mobilebar-tab__icon {
+    display: block;
+    color: #F96972;
+    transition-duration: 0.3s;
+    line-height: 1;
+}
+
+ion-tab-bar{
+    --background: transparent;
+    border-radius: 6px;
+    padding: 12px;
+}

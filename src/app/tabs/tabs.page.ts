@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-
-  constructor() {}
-
+  tailorTabs: string[] = ['home', 'search', 'plus', 'bell', 'user']
+  activeTab: string = 'home'
+ 
+  constructor() { }
+  
+  switchTab(tab: string) {
+    this.activeTab = tab
+  }
+  
 }
