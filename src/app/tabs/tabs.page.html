@@ -1,12 +1,15 @@
-<ion-tabs class="mobilebar-container mobile-layout">
-  <ion-tab-bar slot="bottom">
-    <nav class="mobilebar-tab">
-      <div class="mobilebar-tab-item {{activeTab == e_tab?'active':''}}" *ngFor="let e_tab of tailorTabs;"
-        (click)="switchTab(e_tab)">
-        <span class="mobilebar-tab__icon">
-          <i class="fas fa-{{e_tab}}"></i>
-        </span>
-      </div>
-    </nav>
-  </ion-tab-bar>
+<ion-tabs>
+  <div class="navigation">
+    <ul>
+      <li class="list {{data == activeTab?'active':''}}" *ngFor="let data of tailorTabs;" (click)="switchTab(data)">
+        <a>
+          <span class="icon">
+            <ion-icon name="{{data}}-outline"></ion-icon>
+          </span>
+          <span class="text">{{data| titlecase}}</span>
+        </a>
+      </li>
+      <div class="indicator"></div>
+    </ul>
+  </div>
 </ion-tabs>
