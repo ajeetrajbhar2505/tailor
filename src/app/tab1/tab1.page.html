@@ -21,11 +21,11 @@
       <span class="greeting">{{ greeting }}</span>
     </ion-card-title>
   </ion-toolbar>
-    <ion-toolbar>
+    <ion-content class="ion-padding main" id="main">
+      <ion-toolbar>
         <ion-searchbar placeholder="Search Store" show-clear-button="never" [debounce]="1000" (ionChange)="handleChange($event)"></ion-searchbar>
         <ion-icon id="options" slot="end" size="medium" expand="block" name="options-outline"></ion-icon>
       </ion-toolbar>
-    <ion-content class="ion-padding main" id="main">
       <ion-toolbar id="main-content">
         <span>Mens</span>
         <span slot="end" class="more">See all</span>
@@ -40,7 +40,7 @@
           </div>
           <div class="slider">
             <figure data-color="#292a2f, #131519">
-              <img src="http://www.supah.it/dribbble/012/4.jpg" />
+              <img src="assets/shoes.jpeg" />
             </figure>
           </div>
           <div class="cta">
@@ -65,7 +65,7 @@
           </div>
           <div class="slider">
             <figure data-color="#292a2f, #131519">
-              <img src="http://www.supah.it/dribbble/012/4.jpg" />
+              <img src="assets/shoes.jpeg" />
             </figure>
           </div>
           <div class="cta">
@@ -90,7 +90,7 @@
           </div>
           <div class="slider">
             <figure data-color="#292a2f, #131519">
-              <img src="http://www.supah.it/dribbble/012/4.jpg" />
+              <img src="assets/shoes.jpeg" />
             </figure>
           </div>
           <div class="cta">
