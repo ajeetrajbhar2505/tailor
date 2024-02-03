@@ -1,9 +1,107 @@
 
 <ion-content [fullscreen]="true">
-    <ion-toolbar id="white-background">
+  <ion-toolbar id="main-content">
+    <ion-buttons slot="end">
+      <img [src]="'assets/app.jpeg'" class="profile-photo" width="35px" alt="">
+    </ion-buttons >
+    <ion-card-title style="position: relative; margin-left: 15px">
+      <ion-icon
+        color="white"
+        size="large"
+        [name]="
+          greeting == 'Good morning'
+            ? 'partly-sunny-outline'
+            : greeting == 'Good afternoon'
+            ? 'sunny-outline'
+            : greeting == 'Good night'
+            ? 'cloudy-night-outline'
+            : ''
+        "
+      ></ion-icon>
+      <span class="greeting">{{ greeting }}</span>
+    </ion-card-title>
+  </ion-toolbar>
+    <ion-toolbar>
         <ion-searchbar placeholder="Search Store" show-clear-button="never" [debounce]="1000" (ionChange)="handleChange($event)"></ion-searchbar>
         <ion-icon id="options" slot="end" size="medium" expand="block" name="options-outline"></ion-icon>
-    </ion-toolbar>
+      </ion-toolbar>
+    <ion-content class="ion-padding main" id="main">
+      <ion-toolbar id="main-content">
+        <span>Mens</span>
+        <span slot="end" class="more">See all</span>
+      </ion-toolbar>
+      <div class="shop-cards">
+        <div class="shop-card" *ngFor="let data of [1,2,3]">
+          <div class="title">
+                Nike Metcon 2
+          </div>
+          <div class="desc">
+              Men's training shoe
+          </div>
+          <div class="slider">
+            <figure data-color="#292a2f, #131519">
+              <img src="http://www.supah.it/dribbble/012/4.jpg" />
+            </figure>
+          </div>
+          <div class="cta">
+            <div class="price">
+              price 130$
+            </div>
+            <button class="btn">Buy<span class="bg"></span></button>
+          </div>
+        </div>
+      </div>
+      <ion-toolbar id="main-content">
+        <span>Womens</span>
+        <span slot="end" class="more">See all</span>
+      </ion-toolbar>
+      <div class="shop-cards">
+        <div class="shop-card" *ngFor="let data of [1,2,3]">
+          <div class="title">
+                Nike Metcon 2
+          </div>
+          <div class="desc">
+              Men's training shoe
+          </div>
+          <div class="slider">
+            <figure data-color="#292a2f, #131519">
+              <img src="http://www.supah.it/dribbble/012/4.jpg" />
+            </figure>
+          </div>
+          <div class="cta">
+            <div class="price">
+              price 130$
+            </div>
+            <button class="btn">Buy<span class="bg"></span></button>
+          </div>
+        </div>
+      </div>
+      <ion-toolbar id="main-content">
+        <span>Childrens</span>
+        <span slot="end" class="more">See all</span>
+      </ion-toolbar>
+      <div class="shop-cards margin-bottom">
+        <div class="shop-card" *ngFor="let data of [1,2,3]">
+          <div class="title">
+                Nike Metcon 2
+          </div>
+          <div class="desc">
+              Men's training shoe
+          </div>
+          <div class="slider">
+            <figure data-color="#292a2f, #131519">
+              <img src="http://www.supah.it/dribbble/012/4.jpg" />
+            </figure>
+          </div>
+          <div class="cta">
+            <div class="price">
+              price 130$
+            </div>
+            <button class="btn">Buy<span class="bg"></span></button>
+          </div>
+        </div>
+      </div>
+     </ion-content>
     <ion-modal [keepContentsMounted]="true" trigger="options" #modal>
         <ng-template>
           <ion-header  id="white-background">
@@ -13,7 +111,7 @@
             </ion-toolbar>
           </ion-header>
           <ion-content [fullscreen]="true" class="ion-padding">
-     
+      
           </ion-content>
         </ng-template>
       </ion-modal>
