@@ -1,28 +1,7 @@
 
-<ion-content [fullscreen]="true">
-  <ion-toolbar id="main-content">
-    <ion-buttons slot="end">
-      <img [src]="'assets/app.jpeg'" class="profile-photo" width="35px" alt="">
-    </ion-buttons >
-    <ion-card-title style="position: relative; margin-left: 15px">
-      <ion-icon
-        color="white"
-        size="large"
-        [name]="
-          greeting == 'Good morning'
-            ? 'partly-sunny-outline'
-            : greeting == 'Good afternoon'
-            ? 'sunny-outline'
-            : greeting == 'Good night'
-            ? 'cloudy-night-outline'
-            : ''
-        "
-      ></ion-icon>
-      <span class="greeting">{{ greeting }}</span>
-    </ion-card-title>
-  </ion-toolbar>
-    <ion-content class="ion-padding main" id="main">
-      <ion-toolbar>
+<ion-content [fullscreen]="true" class="ion-padding">
+
+          <ion-toolbar>
         <ion-searchbar placeholder="Search Store" show-clear-button="never" [debounce]="1000" (ionChange)="handleChange($event)"></ion-searchbar>
         <ion-icon id="options" slot="end" size="medium" expand="block" name="options-outline"></ion-icon>
       </ion-toolbar>
@@ -101,7 +80,8 @@
           </div>
         </div>
       </div>
-     </ion-content>
+
+
     <ion-modal [keepContentsMounted]="true" trigger="options" #modal>
         <ng-template>
           <ion-header  id="white-background">
@@ -115,4 +95,6 @@
           </ion-content>
         </ng-template>
       </ion-modal>
+
+      
 </ion-content>
