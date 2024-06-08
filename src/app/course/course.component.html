@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="header">
+        <i class="fa fa-arrow-left" routerLink="/"></i>
+    </div>
+    <header class="header">
+        <h2>Courses</h2>
+        <div class="view-icons">
+            <i class="fa fa-th-large" (click)="toggleExpansion('large')"></i>
+            <i class="fa fa-list" (click)="toggleExpansion('list')"></i>
+        </div>
+    </header>
+ 
+
+    <div class="folders" *ngIf="expandInfo == 'large'">
+        <div class="folder" routerLink="/file">
+            <i class="fa fa-video"></i>
+            <h2>Video</h2>
+            <p>289 Items</p>
+        </div>
+        <div class="folder" routerLink="/file">
+            <i class="fa fa-music"></i>
+            <h2>Audio</h2>
+            <p> 29 Items</p>
+        </div>
+        <div class="folder" routerLink="/file">
+            <i class="fa fa-file"></i>
+            <h2>Document</h2>
+            <p> 180 Items</p>
+        </div>
+        <div class="folder" routerLink="/file">
+            <i class="fa fa-book"></i>
+            <h2>Quiz</h2>
+            <p> 180 Items</p>
+        </div>
+
+    </div>
+
+    <div class="trial-banner">
+        <div class="trial-text">
+            <h2>7 Days Free Trial</h2>
+            <p>Lorem ipsum dolor amet consectetuer adipiscing elit enean commodo.</p>
+            <button>Join</button>
+        </div>
+        <div class="trial-image">
+            <img src="assets/100.png" alt="Trial Image">
+        </div>
+    </div>
+
+    <div  *ngIf="expandInfo == 'list'">
+        <div class="categories mt-2">
+            <div class="category" routerLink="/file">
+                <div class="icon">
+                    <i class="fa fa-video"></i>
+                </div>
+                <div class="details">
+                    <h2>Videos</h2>
+                    <p>289 Items</p>
+                </div>
+                <!-- <i class="fa fa-ellipsis-v options"></i> -->
+            </div>
+            <div class="category" routerLink="/file">
+                <div class="icon">
+                    <i class="fa fa-music"></i>
+                </div>
+                <div class="details">
+                    <h2>Audios</h2>
+                    <p>29 Items</p>
+                </div>
+            </div>
+            <div class="category" routerLink="/file">
+                <div class="icon">
+                    <i class="fa fa-file"></i>
+                </div>
+                <div class="details">
+                    <h2>Documents</h2>
+                    <p>180 Items</p>
+                </div>
+            </div>
+            <div class="category" routerLink="/file">
+                <div class="icon">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="details">
+                    <h2>Quiz</h2>
+                    <p>180 Items</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

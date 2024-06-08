@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-course',
+  templateUrl: './course.component.html',
+  styleUrl: './course.component.scss'
+})
+export class CourseComponent {
+
+  expandInfo: string = "large"
+  toggleExpansion(expandInfo: string) {
+    this.expandInfo = expandInfo
+  }
+
+}
