@@ -37,7 +37,6 @@
 }
 .ion-page{
   padding: 25px;
-  overflow: auto;
 }
 
 body {
@@ -62,6 +61,9 @@ body {
       box-shadow: unset !important;
       border-radius: unset !important;
       padding: unset !important;
+  }
+  footer{
+    width: 100% !important;
   }
 }
 
@@ -275,6 +277,10 @@ header {
   border-radius: 15%;
 }
 
+main{
+  overflow: auto;
+  height: 90vh;
+}
 
 
 footer {
@@ -282,8 +288,7 @@ footer {
   justify-content: space-around;
   padding: 10px 0;
   background-color: #fff;
-  position: absolute;
-  width: 90%;
+  width: 100%;
 }
 
 footer i {
