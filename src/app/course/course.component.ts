@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebService } from '../web.service';
 
 @Component({
   selector: 'app-course',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './course.component.scss'
 })
 export class CourseComponent {
+
+  constructor(private http:WebService){}
+
 
   expandInfo: string = "large"
   toggleExpansion(expandInfo: string) {

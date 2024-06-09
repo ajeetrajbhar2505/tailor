@@ -14,6 +14,7 @@ import { CourseComponent } from './course/course.component';
 import { FilesComponent } from './files/files.component';
 import { MembershipPlanComponent } from './membership-plan/membership-plan.component';
 import { FlashMessageComponent } from './flash-message/flash-message.component';
+import { WebService } from './web.service';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { FlashMessageComponent } from './flash-message/flash-message.component';
     FlashMessageComponent
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },WebService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
