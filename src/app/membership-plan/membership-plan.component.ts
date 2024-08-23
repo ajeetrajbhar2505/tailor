@@ -9,10 +9,10 @@ export class MembershipPlanComponent {
 
   memvershipPlan = {
     monthly: false,
-    yearly: false,
-    lifetime: true
+    yearly: true,
+    lifetime: false
   }
-  totalprice: string = "329.90"
+  totalprice: string = "128"
 
   activateCard(membership: string,totalprice:string) {
     this.totalprice = totalprice

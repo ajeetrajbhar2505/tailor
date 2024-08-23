@@ -27,6 +27,9 @@ export class VideoPlayerComponent implements OnInit {
   contentLoaded = false;
   readMore: boolean = false
   videoPlaying: boolean = false
+  closePopup: boolean = false
+  amount: number = 2300
+  Image: string = "assets/Matheran.jpg"
   contentControls: ContentControls = {
     playContent: false,
     openFullscreen: false,
@@ -37,16 +40,25 @@ export class VideoPlayerComponent implements OnInit {
   };
 
   videoDetails = {
-    poster: 'assets/BigBuckBunny.jpeg',
-    videoPath: 'assets/BigBuckBunny.mp4',
+    poster: 'assets/Matheran.jpg',
+    videoPath: 'assets/Matheran.mp4',
     locked: false,
-    title: 'Phonics Song with TWO Words - A For Apple - ABC Alphabet Songs with Sounds for Children',
-    describe: 'NEW 3D Animated Nursery Rhymes with Baby Taku from ChuChu TV Phonics Song with TWO Words - A For Apple - ABC Alphabet Songs with Sounds for Children',
+    title: 'Trek places in Matheran',
+    describe: 'Trek places in Matheran, situated in Maharashtra State of India is a small hill station. The closest railway station to Matheran Tourist Places is Neral, which is well-connected to Mumbai and Pune by local trains. Neral has a narrow gauge railway station that runs daily trains to Matheran, however the train route for Matheran Trip from Neral to Matheran remains closed most of the time. Instead, shuttle services run hourly between Aman Lodge and Matheran station. You can hire taxi from Neral to reach Aman Lodge. It takes about 20 minutes to reach Aman Lodge from Neral Railway Station. As Matheran is automobile-free hill station, no automobiles are allowed beyond Aman Lodge except ambulances. So, parking is available in Aman Lodge beside the main entrance. There are frequent toy trains from Aman Lodge to Matheran. It takes around 15 minutes to reach Matheran from Aman Lodge. Once you arrive at Matheran hill station, you will find many hotels for your stay. The market area in Matheran is filled with shops and restaurants. Horses and  hand-pulled rickshaws are available for transport. Alternatively, you can explore on your own by foot since most of the tourist attractions are located close to each other.',
     shortDescribe: '',
     fullDescribe: '',
     Rating: 4.5,
-    author: 'ChuChu TV',
-    studentEnrolledCount: 150
+    Location: 'Neral,Navi Mumbai',
+    Pictures: [
+      { title: 'Dodhani Waterfalls – Go For Waterfall Rappelling', poster: 'Dodhani-Waterfall.jpg' },
+      { title: 'Charlotte Lake – Go On A Trip', poster: 'Charlotte-Lake.jpg' },
+      { title: 'Louisa Point – Stop & Admire The View', poster: 'Louisa-Point.jpg' },
+      { title: 'Little Chowk Point – Explore The Place', poster: 'Little-Chowk-Point.jpg' },
+      { title: 'Porcupine Point – Watch A Beautiful Sunset', poster: 'Porcupine-point.jpg' },
+      { title: 'Neral-Matheran Toy Train – A Journey To Remember', poster: 'Neral-Matheran-Train.jpg' },
+      { title: 'Rambagh Point – Visit During The Dusk', poster: 'Rambagh-Point.jpg' },
+    ],
+    studentEnrolledCount: 15
   }
 
   recieverDetails: any = {
@@ -68,10 +80,10 @@ export class VideoPlayerComponent implements OnInit {
     { topic: 'Learn Figma', time: '3.9', timeTitle: '2h 20min', isactive: false, locked: true },
   ]
 
-  videos:any = []
+  videos: any = []
 
   ngOnInit(): void {
-    this.videoDetails.shortDescribe = this.truncateDescription(this.videoDetails.describe, 61);
+    this.videoDetails.shortDescribe = this.truncateDescription(this.videoDetails.describe, 200);
   }
 
   activetab: string = "Lesson"
@@ -272,7 +284,7 @@ export class VideoPlayerComponent implements OnInit {
       const lastSpaceIndex = truncatedDescription.lastIndexOf(' ');
 
       // Truncate at the last space and append ellipsis
-      truncatedDescription = truncatedDescription.substring(0, lastSpaceIndex) + '...';
+      truncatedDescription = truncatedDescription.substring(0, lastSpaceIndex) + '';
       return truncatedDescription;
     }
   }
@@ -311,5 +323,9 @@ export class VideoPlayerComponent implements OnInit {
   }
   togglereadMoreDescribe() {
     this.readMore = !this.readMore
+  }
+
+  fetchclosePopupEvent(close: boolean) {
+    this.closePopup = close
   }
 }

@@ -7,16 +7,16 @@ import { CourseComponent } from './course/course.component';
 import { FilesComponent } from './files/files.component';
 import { MembershipPlanComponent } from './membership-plan/membership-plan.component';
 import { FlashMessageComponent } from './flash-message/flash-message.component';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { FillupdetailsComponent } from './fillupdetails/fillupdetails.component';
 
 const routes: Routes = [
   {path : '',redirectTo : '',pathMatch : 'full'},
   {path : '',component : HomeComponent},
   {path : 'membership-plan',component : MembershipPlanComponent},
-  {path : 'profile',component : ProfileInfoComponent},
   {path : 'watch',component : VideoPlayerComponent},
-  {path : 'course',component : CourseComponent},
-  {path : 'file',component : FilesComponent},
-  {path : 'flash-message',component : FlashMessageComponent},
+  {path : 'coming-soon',component : ComingSoonComponent},
+  {path : 'fill-up',component : FillupdetailsComponent},
 ]
 @NgModule({
   imports: [

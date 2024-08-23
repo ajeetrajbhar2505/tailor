@@ -8,6 +8,16 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  active: boolean = false
+  activePlace: string = ""
+  closePopup: boolean = false
+  places = [
+    { name: 'All', active: true },
+    { name: 'India', active: false },
+    { name: 'Spain', active: false },
+    { name: 'Maldives', active: false },
+    { name: 'French Polynesia', active: false },
+  ]
 
   constructor(private _https: WebService, private router: Router) { }
 
@@ -22,6 +32,8 @@ export class HomeComponent {
       })
 
   }
-
+  setAllActive() {
+    this.places.map(d => d.active = false)
+  }
 
 }

@@ -26,17 +26,26 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 #white-background {
-    --background: white;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset !important;
+  --background: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset !important;
 
-  }
-  
-
-  ::-webkit-scrollbar {
-    display: none;
 }
-.ion-page{
+
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+pre {
+  margin: unset !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.ion-page {
   padding: 25px;
+  background-color: #c7c9cd4a;
 }
 
 body {
@@ -45,25 +54,21 @@ body {
 
 .container {
   max-width: 400px;
-  min-height: 900px;
-  margin: 20px auto;
-  background-color: #fff;
+  height: 900px;
+  margin: 0 0 60px 0;
   border-radius: 15px;
-  overflow: hidden;
+  overflow: auto;
   padding: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 480px) {
   .container {
-      width: 100%;
-      border-radius: 0;
-      box-shadow: unset !important;
-      border-radius: unset !important;
-      padding: unset !important;
-  }
-  footer{
-    width: 100% !important;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: unset !important;
+    border-radius: unset !important;
+    padding: unset !important;
   }
 }
 
@@ -71,7 +76,13 @@ header {
   display: flex;
   justify-content: space-between;
   padding-bottom: 15px;
-  background-color: #fff;
+}
+header a {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
 }
 
 .menu-icon,
@@ -81,11 +92,6 @@ header {
 }
 
 
-.welcome h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
 .welcome p {
   font-size: 16px;
   margin-bottom: 20px;
@@ -94,7 +100,7 @@ header {
 .trial-banner {
   display: flex;
   align-items: center;
-  background-color: #eaf3f9;
+  background-color: #fff;
   border-radius: 10px;
   padding: 15px;
   padding-right: 25px;
@@ -113,8 +119,7 @@ header {
 }
 
 .trial-text button {
-  // background-color: #00796b;
-  background: #333;
+  background: rgb(250 91 48);
   color: #fff;
   border: none;
   padding: 10px 15px;
@@ -123,7 +128,6 @@ header {
 }
 
 .trial-image img {
-  width: 100px;
   border-radius: 50%;
   margin-left: 15px;
 }
@@ -141,6 +145,7 @@ header {
   display: flex;
   overflow-x: auto;
   gap: 10px;
+  margin: 10px 0 10px 0;
 }
 
 .subject-tags button {
@@ -149,7 +154,7 @@ header {
   border-radius: 20px;
   cursor: pointer;
   color: #00796b;
-  background-color: #eee;
+  background-color: #fff;
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -167,7 +172,7 @@ header {
   background-color: #333;
 
   .fa {
-      color: #fff;
+    color: #fff;
   }
 }
 
@@ -183,20 +188,14 @@ header {
 }
 
 
-.subject-tags button {
-  border: none;
-  padding: 10px 15px;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: #eee;
-}
+
 
 .subject-tags .active {
   background-color: #333;
-  color: #fff;
+  color: #d7d8da;
 
   .fa {
-      color: #fff;
+    color: #fff;
   }
 }
 
@@ -217,7 +216,7 @@ header {
 
   /* Prevents wrapping of flex items */
   .fa {
-      font-size: 15px;
+    font-size: 15px;
   }
 }
 
@@ -226,13 +225,27 @@ header {
   // background-color: #e0f7fa;
   background: #eaf3f9;
   border-radius: 10px;
-  padding: 15px;
   flex: 1;
   border-radius: 5px;
   min-width: 200px;
+  height: 120px;
+  position: relative;
   /* Ensures a minimum width for the course cards */
 }
 
+.course-card button {
+  // background-color: #00796b;
+  background: #fff;
+  color: #333;
+  border: none;
+  padding: 7px 7px;
+  border: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
 
 
 .courses::-webkit-scrollbar {
@@ -247,7 +260,6 @@ header {
   align-items: center;
   background-color: #e0f7fa;
   border-radius: 10px;
-  padding: 15px;
   flex: 1;
 }
 
@@ -277,18 +289,27 @@ header {
   border-radius: 15%;
 }
 
-main{
+main {
   overflow: auto;
   height: 90vh;
+  padding-bottom: 50px;
 }
 
+
+.bottom-fixed {
+  position: fixed;
+  bottom: -15px;
+  left: 8px;
+  right: 8px;
+  border-radius: 20px;
+  padding: 15px;
+}
 
 footer {
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
   background-color: #fff;
-  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -304,13 +325,7 @@ footer i:first-child {
 
 .fa {
   font-size: 24px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
+  color: #979797;
 }
 
 .profile {
@@ -430,7 +445,7 @@ footer i:first-child {
   color: #f39c12;
 
   .fa {
-      font-size: 15px;
+    font-size: 15px;
   }
 }
 
@@ -474,29 +489,25 @@ footer i:first-child {
   align-items: center;
 }
 
-.header h1 {
-  font-size: 28px; /* Increased font size for better readability */
-  margin: 0;
-  color: #333; /* Added color for consistency */
-}
 
 .view-icons .fa {
-  font-size: 22px; /* Slightly increased font size for better visibility */
-  color: #666; /* Updated color for a softer look */
-  margin-left: 15px; /* Increased margin for better spacing */
+  font-size: 22px;
+  /* Slightly increased font size for better visibility */
+  /* Updated color for a softer look */
+  margin-left: 15px;
+  /* Increased margin for better spacing */
   cursor: pointer;
-  transition: color 0.3s ease; /* Added transition for hover effect */
+  transition: color 0.3s ease;
+  /* Added transition for hover effect */
 }
 
-.view-icons .fa:hover {
-  color: #00796b; /* Darken color on hover */
-}
 
 .breadcrumb {
   color: #333333;
   margin-bottom: 20px;
-  .fa{
-      color: #333;
+
+  .fa {
+    color: #333;
   }
 }
 
@@ -507,57 +518,78 @@ footer i:first-child {
   padding-top: 15px;
 }
 
-.folders-scrollable{
-      display: grid;
-      grid-auto-flow: column; /* Enable horizontal flow */
-      grid-auto-columns: minmax(200px, 1fr); /* Set minimum width for columns */
-      gap: 20px;
-      padding-top: 15px;
-      overflow-x: auto; /* Enable horizontal scrolling */
-      scroll-snap-type: x mandatory; /* Optional: adds snapping to each item */
+.folders-scrollable {
+  display: grid;
+  grid-auto-flow: column;
+  /* Enable horizontal flow */
+  grid-auto-columns: minmax(200px, 1fr);
+  /* Set minimum width for columns */
+  gap: 20px;
+  padding-top: 15px;
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory;
+  /* Optional: adds snapping to each item */
 }
 
 
 .folder {
   color: #00796b;
-  background: #f2f4fc; /* Added gradient for a more modern look */
+  background: #f2f4fc;
+  /* Added gradient for a more modern look */
   padding: 15px 0 0 20px;
-  border-radius: 12px; /* Slightly increased border radius for a smoother look */
+  border-radius: 12px;
+  /* Slightly increased border radius for a smoother look */
   position: relative;
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Added transform transition */
-  margin-bottom: 10px; /* Added margin for better spacing */
-  transform: translateY(-5px); /* Added slight lift on hover */
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  /* Added transform transition */
+  margin-bottom: 10px;
+  /* Added margin for better spacing */
+  transform: translateY(-5px);
+  /* Added slight lift on hover */
 }
 
 .folder::before {
   content: "";
   position: absolute;
-  top: -11px; /* Adjust based on the size of the tab */
-  left: 0px; /* Align with padding */
-  width: 60px; /* Width of the tab */
-  height: 20px; /* Height of the tab */
-  background-color: #eef3f8; /* Same as the folder background */
-  border-top-left-radius: 8px; /* Smooth corner for the tab */
-  border-top-right-radius: 20px; /* Smooth corner for the tab */
-  z-index: -1; /* Place behind the folder */
+  top: -11px;
+  /* Adjust based on the size of the tab */
+  left: 0px;
+  /* Align with padding */
+  width: 60px;
+  /* Width of the tab */
+  height: 20px;
+  /* Height of the tab */
+  background-color: #eef3f8;
+  /* Same as the folder background */
+  border-top-left-radius: 8px;
+  /* Smooth corner for the tab */
+  border-top-right-radius: 20px;
+  /* Smooth corner for the tab */
+  z-index: -1;
+  /* Place behind the folder */
 }
 
 
 .folder.active {
-  background: #eef3f8; /* Updated active background to gradient */
+  background: #eef3f8;
+  /* Updated active background to gradient */
   color: #00796b;
 }
 
 .folder.active::before {
-  background-color: #eef3f8; /* Match the active background */
+  background-color: #eef3f8;
+  /* Match the active background */
 }
 
 .folder i.fa {
   font-size: 28px;
   margin-bottom: 10px;
-  transition: color 0.3s ease; /* Added transition for icon color */
+  transition: color 0.3s ease;
+  /* Added transition for icon color */
 }
-.folder p i.fa{
+
+.folder p i.fa {
   font-size: 15px;
 }
 
@@ -566,11 +598,14 @@ footer i:first-child {
 }
 
 .folder h2 {
-  font-size: 18px; /* Increased font size for better readability */
+  font-size: 18px;
+  /* Increased font size for better readability */
   margin: 0;
-  margin-bottom: 8px; /* Slightly increased margin for better spacing */
+  margin-bottom: 8px;
+  /* Slightly increased margin for better spacing */
   color: #00796b;
-  transition: color 0.3s ease; /* Added transition for text color */
+  transition: color 0.3s ease;
+  /* Added transition for text color */
 }
 
 .folder.active h2 {
@@ -578,9 +613,11 @@ footer i:first-child {
 }
 
 .folder p {
-  font-size: 14px; /* Increased font size for better readability */
+  font-size: 14px;
+  /* Increased font size for better readability */
   color: #999;
-  transition: color 0.3s ease; /* Added transition for text color */
+  transition: color 0.3s ease;
+  /* Added transition for text color */
 }
 
 .folder.active p {
@@ -591,14 +628,17 @@ footer i:first-child {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 18px; /* Increased font size for better visibility */
+  font-size: 18px;
+  /* Increased font size for better visibility */
   color: #999;
   cursor: pointer;
-  transition: color 0.3s ease; /* Added transition for color */
+  transition: color 0.3s ease;
+  /* Added transition for color */
 }
 
 .folder .options:hover {
-  color: #00796b; /* Darken color on hover */
+  color: #00796b;
+  /* Darken color on hover */
 }
 
 .folder.active .options {
@@ -638,8 +678,9 @@ h2 {
 .heading .rating {
   font-size: 15px;
   color: #f39c12;
-  .fa{
-      font-size: 15px;
+
+  .fa {
+    font-size: 15px;
   }
 }
 
@@ -745,7 +786,6 @@ h2 {
 
 .view-icons .fa {
   font-size: 20px;
-  color: #333;
   margin-left: 10px;
   cursor: pointer;
 }
@@ -833,6 +873,74 @@ h2 {
   color: #fff;
 }
 
-.mt-2{
+.mt-2 {
   margin-top: 10px;
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #FFFFFF;
+  transition: 0.3s;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+.sidebar-header .fa {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.sidebar-menu {
+  padding: 20px;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar-menu a .fa {
+  margin-right: 10px;
+}
+
+.sidebar-menu a:hover {
+  background-color: #EFEFEF;
+  border-radius: 10px;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+
+.overlay.active {
+  display: block;
 }

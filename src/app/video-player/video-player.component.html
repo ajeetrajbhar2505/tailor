@@ -1,6 +1,9 @@
 <div class="container">
+<app-fillupdetails *ngIf="closePopup" [amount]="amount" [Image]="Image" [Onclose]="closePopup" (OncloseEvent)="fetchclosePopupEvent($event)"></app-fillupdetails>
+
+
     <div class="header">
-        <i class="fa fa-arrow-left" routerLink="/"></i>
+        <i class="fa fa-angle-left" routerLink="/"></i>
     </div>
     <div class="video-thumbnail">
         <video width="100%" (click)="playPauseContent()" id="classContent" (loadeddata)="checkContentLoaded()"
@@ -9,55 +12,40 @@
     </div>
     <div class="course-info">
         <div class="heading">
-            <h2>{{videoDetails.title}}</h2>
-            <div class="rating">
-                <p class="rating"><i class="fa fa-star"></i> 4.5 (98 reviews)</p>
-            </div>
+                <h2><i class="fa fa-map-marker"></i>&nbsp; {{videoDetails.title}}</h2>
+        </div>
+
+        <div class="subject-tags">
+            <button class="active"><i class="fa fa-rupee"></i>2,300</button>
+            <button class="active"><i class="fa fa-user-plus"></i> {{videoDetails.studentEnrolledCount}}+ People
+                Joined</button>
         </div>
         <div class="subject-tags">
-            <button><i class="fa fa-graduation-cap"></i>{{videoDetails.author}}</button>
-            <button><i class="fa fa-clock"></i> {{convertTime(contentControls.duration?contentControls.duration:'00:00')}}</button>
-            <button><i class="fa fa-user-plus"></i> {{videoDetails.studentEnrolledCount}}+ Students Joined</button>
-            <button><i class="fa fa-chart-line"></i>Advance Course</button>
+            <button class="active"><i class="fa fa-map-marker"></i>{{videoDetails.Location}}</button>
+            <button class="active"><i class="fa fa-clock-o"></i>8:00 AM</button>
         </div>
-   
+        <div class="subject-tags">
+            <button class="active"><i class="fa fa-star "></i>4.5 (98 reviews)</button>
+        </div>
+        
         <div class="description">
             <h3>Description</h3>
             <p>{{readMore?videoDetails.describe:videoDetails.shortDescribe}}
                 <a (click)="togglereadMoreDescribe()">{{readMore?'Hide':'Read More'}}</a>
             </p>
         </div>
-        
-        <section class="your-courses">
-            <h3>Next courses</h3>
-            <div class="courses">
-                <div class="course-card" routerLink="/watch">
-                    <img src="assets/100.png" alt="Mobile UI UX Design">
-                    <h3>Mobile UI UX Design</h3>
-                    <div class="course-details">
-                        <p class="rating"><i class="fa fa-star"></i> 4.8 (112 reviews)</p>
-                        <p><i class="fa fa-clock"></i> 3h 50Min</p>
-                    </div>
-                </div>
-                <div class="course-card" routerLink="/watch">
-                    <img src="assets/100.png" alt="Web Design">
-                    <h3>Web Design</h3>
-                    <div class="course-details">
-                        <p class="rating"><i class="fa fa-star"></i> 4.5 (98 reviews)</p>
-                        <p><i class="fa fa-clock"></i> 2h 30Min</p>
-                    </div>
-                </div>
-                <div class="course-card" routerLink="/watch">
-                    <img src="assets/100.png" alt="Infrastructure">
-                    <h3>Infrastructure</h3>
-                    <div class="course-details">
-                        <p class="rating"><i class="fa fa-star"></i> 4.7 (150 reviews)</p>
-                        <p><i class="fa fa-clock"></i> 1h 30Min</p>
-                    </div>
-                </div>
-                <!-- Add more course-cards routerLink="/watch" as needed -->
-            </div>
-        </section>
-    </div>
 
+        
+
+        <section class="your-courses">
+            <h3>Things To See & Do</h3>
+            <div class="courses">
+            <img *ngFor="let data of videoDetails.Pictures" (click)="Image = 'assets/places/Matheran/' + data.poster;closePopup=!closePopup" [src]=" 'assets/places/Matheran/' + data.poster" alt="">
+        </div>
+        </section>
+       
+    </div>
+    <div class="proceed" *ngIf="!closePopup">
+        <button class="pay-now bottom-fixed" (click)="Image = 'assets/Matheran.jpg';closePopup=!closePopup">Book {{amount | currency :'INR'}}</button>
+    </div>
 </div>

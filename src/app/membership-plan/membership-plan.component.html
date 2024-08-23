@@ -1,7 +1,7 @@
 
 <div class="container">
     <header>
-        <i class="fa fa-arrow-left" routerLink="/"></i>
+        <i class="fa fa-angle-left" routerLink="/"></i>
     </header>
     <header class="header">
         <h2>Membership Plan</h2>
@@ -10,36 +10,37 @@
         </div>
     </header>
     <div class="membership-options">
-        <label class="membership-card monthly {{memvershipPlan.monthly?'active':''}}" (click)="activateCard('monthly','9.90')">
+        <label class="membership-card monthly {{memvershipPlan.monthly?'active':''}}" (click)="activateCard('monthly','8')">
             <input type="radio" name="membership" value="monthly">
-            <img src="assets/50.png" alt="Monthly Icon">
+            <img src="assets/{{memvershipPlan.monthly?'check':'uncheck'}}-circle.svg" alt="Monthly Icon">
             <div class="details">
                 <h2>By Monthly</h2>
                 <p>Enjoy a month of library learning and word learning treasure in this grade.</p>
-                <p class="price">$9.90</p>
+                <p class="price">$8</p>
             </div>
         </label>
-        <label class="membership-card yearly {{memvershipPlan.yearly?'active':''}}" (click)="activateCard('yearly','129.90')">
+        <label class="membership-card yearly {{memvershipPlan.yearly?'active':''}}" (click)="activateCard('yearly','128')">
             <input type="radio" name="membership" value="yearly">
-            <img src="assets/50.png" alt="Yearly Icon">
+            <img src="assets/{{memvershipPlan.yearly?'check':'uncheck'}}-circle.svg" alt="Yearly Icon">
             <div class="details">
                 <h2>By Year</h2>
                 <p>Enjoy a year of library learning and word learning treasures in this grade.</p>
-                <p class="price">$129.90</p>
+                <p class="price">$128</p>
             </div>
         </label>
-        <label class="membership-card lifetime {{memvershipPlan.lifetime?'active':''}}" (click)="activateCard('lifetime','329.90')">
+        <label class="membership-card lifetime {{memvershipPlan.lifetime?'active':''}}" (click)="activateCard('lifetime','328')">
             <input type="radio" name="membership" value="lifetime">
-            <img src="assets/50.png" alt="Lifetime Icon">
+            <img src="assets/{{memvershipPlan.lifetime?'check':'uncheck'}}-circle.svg" alt="Lifetime Icon">
             <div class="details">
                 <h2>Lifetime card</h2>
                 <p>Enjoy lifelong library learning and word learning treasures in this grade.</p>
-                <p class="price">$329.90</p>
+                <p class="price">$328</p>
             </div>
         </label>
     </div>
-    <footer>
-        <p class="total-price">${{totalprice}}</p>
-        <button class="pay-now" routerLink="/flash-message">Pay Now</button>
-    </footer>
+
+    <div class="proceed">
+        <button class="pay-now">Pay Now {{totalprice | currency}}</button>
+    </div>
+
 </div>

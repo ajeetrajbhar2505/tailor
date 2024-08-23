@@ -15,6 +15,8 @@ import { FilesComponent } from './files/files.component';
 import { MembershipPlanComponent } from './membership-plan/membership-plan.component';
 import { FlashMessageComponent } from './flash-message/flash-message.component';
 import { WebService } from './web.service';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { FillupdetailsComponent } from './fillupdetails/fillupdetails.component';
 
 
 @NgModule({
@@ -25,10 +27,13 @@ import { WebService } from './web.service';
     CourseComponent,
     FilesComponent,
     MembershipPlanComponent,
+    ComingSoonComponent,
+    FillupdetailsComponent,
     FlashMessageComponent
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },WebService],
   bootstrap: [AppComponent],
+  exports :[FillupdetailsComponent]
 })
 export class AppModule {}
