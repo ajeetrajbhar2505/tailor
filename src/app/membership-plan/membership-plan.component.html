@@ -1,16 +1,12 @@
-
 <div class="container">
-    <header>
-        <i class="fa fa-angle-left" (click)="goBack()"></i>
-    </header>
     <header class="header">
-        <h2>Membership Plan</h2>
+        <h2><i class="fa fa-angle-left" (click)="goBack()"></i></h2>
         <div class="view-icons">
-            <i class="fa fa-cog" ></i>
         </div>
     </header>
     <div class="membership-options">
-        <label class="membership-card monthly {{memvershipPlan.monthly?'active':''}}" (click)="activateCard('monthly','8')">
+        <label class="membership-card monthly {{memvershipPlan.monthly?'active':''}}"
+            (click)="activateCard('monthly','8')">
             <input type="radio" name="membership" value="monthly">
             <img src="assets/{{memvershipPlan.monthly?'check':'uncheck'}}-circle.svg" alt="Monthly Icon">
             <div class="details">
@@ -19,7 +15,8 @@
                 <p class="price">$8</p>
             </div>
         </label>
-        <label class="membership-card yearly {{memvershipPlan.yearly?'active':''}}" (click)="activateCard('yearly','128')">
+        <label class="membership-card yearly {{memvershipPlan.yearly?'active':''}}"
+            (click)="activateCard('yearly','128')">
             <input type="radio" name="membership" value="yearly">
             <img src="assets/{{memvershipPlan.yearly?'check':'uncheck'}}-circle.svg" alt="Yearly Icon">
             <div class="details">
@@ -28,7 +25,8 @@
                 <p class="price">$128</p>
             </div>
         </label>
-        <label class="membership-card lifetime {{memvershipPlan.lifetime?'active':''}}" (click)="activateCard('lifetime','328')">
+        <label class="membership-card lifetime {{memvershipPlan.lifetime?'active':''}}"
+            (click)="activateCard('lifetime','328')">
             <input type="radio" name="membership" value="lifetime">
             <img src="assets/{{memvershipPlan.lifetime?'check':'uncheck'}}-circle.svg" alt="Lifetime Icon">
             <div class="details">
@@ -39,8 +37,9 @@
         </label>
     </div>
 
+    <app-banner></app-banner>
     <div class="proceed">
-        <button class="pay-now">Pay Now {{totalprice | currency}}</button>
+        <button class="pay-now bottom-fixed">Pay Now {{totalprice | currency}}</button>
     </div>
 
 </div>

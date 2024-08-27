@@ -104,6 +104,7 @@ header a {
   border-radius: 10px;
   padding: 15px;
   padding-right: 25px;
+  position: relative;
 }
 
 .trial-text h2 {
@@ -127,9 +128,33 @@ header a {
   cursor: pointer;
 }
 
-.trial-image img {
+.trial-image {
+  position: absolute;
+  right: 20px;
+  bottom: 3px;
+  img {
   border-radius: 50%;
   margin-left: 15px;
+  width: 150px;
+}}
+
+.benefits-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.benefits-list li {
+  font-size: 16px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.benefits-list li:before {
+  content: "✔";
+  color: rgb(250 91 48);
+  margin-right: 10px;
+  font-weight: bold;
 }
 
 .subjects {
@@ -169,7 +194,7 @@ header a {
 
 .subject-tags button:hover {
   color: #fff;
-  background-color: #333;
+  background-color: #777;
 
   .fa {
     color: #fff;
@@ -191,7 +216,7 @@ header a {
 
 
 .subject-tags .active {
-  background-color: #333;
+  background-color: #777;
   color: #d7d8da;
 
   .fa {
@@ -943,4 +968,8 @@ h2 {
 
 .overlay.active {
   display: block;
+}
+
+.fa-angle-left:before{
+  font-size: xx-large;
 }
