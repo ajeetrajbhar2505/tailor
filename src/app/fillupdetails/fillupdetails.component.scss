@@ -10,12 +10,14 @@
     z-index: 20;
     transition: all 0.5s;
     -webkit-transition: all 0.7s;
+
 }
 
 .active{
     left: 0;
     right: 0;
-    bottom: -200px;
+    bottom: -180px;
+    padding-bottom: 130px !important;
 }
 
 .package-offer {

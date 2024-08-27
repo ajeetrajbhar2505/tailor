@@ -1,5 +1,3 @@
-
-
 <div class="overlay {{active?'active':''}}"></div>
 <div class="sidebar {{active?'active':''}}">
     <div class="sidebar-header">
@@ -23,21 +21,13 @@
         <section class="welcome">
             <h1>Explore</h1>
             <p>Find the place for yourself</p>
-            <div class="trial-banner" routerLink="/membership-plan">
-                <div class="trial-text">
-                    <h2>7 Days Free Trial</h2>
-                    <p>Lorem ipsum dolor amet consectetuer adipiscing elit enean commodo.</p>
-                    <button>Subscription</button>
-                </div>
-                <div class="trial-image">
-                    <img src="assets/places/Location.jpg" alt="Tourism Image">
-                </div>
-            </div>
+            <app-banner></app-banner>
         </section>
         <section class="subjects">
             <h2>Places</h2>
             <div class="subject-tags">
-                <button *ngFor="let data of places;" (click)="setAllActive(); data.active = true" [class]="data.active?'active':''">{{data.name}}</button>
+                <button *ngFor="let data of places;" (click)="setAllActive(); data.active = true"
+                    [class]="data.active?'active':''">{{data.name}}</button>
             </div>
         </section>
         <section class="popular-courses">
@@ -60,20 +50,12 @@
                 </div>
             </div>
         </section>
-        <div class="trial-banner" routerLink="/membership-plan">
-            <div class="trial-text">
-                <h2>7 Days Free Trial</h2>
-                <p>Lorem ipsum dolor amet consectetuer adipiscing elit enean commodo.</p>
-                <button>Watch More</button>
-            </div>
-            <div class="trial-image">
-                <img src="assets/places/Location.jpg" width="100px" alt="Tourism Image">
-            </div>
-        </div>
+        <app-banner></app-banner>
         <section class="popular-courses">
             <h2>Recent Travel Plans</h2>
             <div class="courses">
-                <div class="course-card" routerLink="/watch" style="background-image: url('assets/places/Goa.jpg');background-size: cover;">
+                <div class="course-card" routerLink="/watch"
+                    style="background-image: url('assets/places/Goa.jpg');background-size: cover;">
                     <button>Join <i class="fa fa-handshake-o"></i></button>
                 </div>
                 <div class="course-card" routerLink="/watch"

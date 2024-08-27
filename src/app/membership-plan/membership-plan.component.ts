@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-membership-plan',
@@ -6,6 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './membership-plan.component.scss'
 })
 export class MembershipPlanComponent {
+
+
+  constructor(private _Location: Location) { }
+
+  ngOnInit() { }
+
+  goBack() {
+    this._Location.back()
+  }
 
   memvershipPlan = {
     monthly: false,

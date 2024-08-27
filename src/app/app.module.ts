@@ -17,6 +17,7 @@ import { FlashMessageComponent } from './flash-message/flash-message.component';
 import { WebService } from './web.service';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { FillupdetailsComponent } from './fillupdetails/fillupdetails.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { FillupdetailsComponent } from './fillupdetails/fillupdetails.component'
     MembershipPlanComponent,
     ComingSoonComponent,
     FillupdetailsComponent,
-    FlashMessageComponent
+    FlashMessageComponent,
+    BannerComponent
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },WebService],
