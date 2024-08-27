@@ -9,7 +9,7 @@
     position: absolute;
     z-index: 20;
     transition: all 0.5s;
-    -webkit-transition: all 0.8s;
+    -webkit-transition: all 0.7s;
 }
 
 .active{
@@ -39,11 +39,11 @@
     font-size: 18px;
     margin: 0;
     color: #333;
+    font-weight: 900;
 }
 
 .package-details p {
     margin: 5px 0;
-    color: #555;
 }
 
 .quote-form {
@@ -61,7 +61,6 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    font-size: 14px;
     outline: unset;
 
 }
@@ -72,7 +71,7 @@
 }
 
 .country-code {
-    padding: 10px;
+    padding: 11.5px;
     background-color: #fff;
     border-radius: 5px 0 0 5px;
     border-top: 1px solid #ccc;
