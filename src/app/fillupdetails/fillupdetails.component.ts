@@ -8,8 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class FillupdetailsComponent implements OnInit {
   @Output() OncloseEvent: EventEmitter<boolean> = new EventEmitter()
   @Input() set Onclose(close: any) {
+    this.closed = close
     this.OncloseEvent.emit(close)
   }
+  closed:boolean=  true
   @Input() amount: number = 0
   @Input() Image: string = ""
 
