@@ -1,12 +1,9 @@
 import {
   Component,
-  ElementRef,
   OnInit,
-  Optional,
-  ViewChild,
-  OnDestroy,
 } from '@angular/core';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+
+import { Location } from '@angular/common';
 
 export interface ContentControls {
   playContent: boolean;
@@ -39,6 +36,7 @@ export class VideoPlayerComponent implements OnInit {
     duration: '',
   };
 
+
   videoDetails = {
     poster: 'assets/Matheran.jpg',
     videoPath: 'assets/Matheran.mp4',
@@ -59,6 +57,12 @@ export class VideoPlayerComponent implements OnInit {
       { title: 'Rambagh Point – Visit During The Dusk', poster: 'Rambagh-Point.jpg' },
     ],
     studentEnrolledCount: 15
+  }
+
+  constructor(private Location: Location) { }
+
+  goBack() {
+    this.Location.back()
   }
 
   recieverDetails: any = {

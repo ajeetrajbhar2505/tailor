@@ -9,12 +9,14 @@ import { MembershipPlanComponent } from './membership-plan/membership-plan.compo
 import { FlashMessageComponent } from './flash-message/flash-message.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { FillupdetailsComponent } from './fillupdetails/fillupdetails.component';
+import { CitiesComponent } from './cities/cities.component';
 
 const routes: Routes = [
   {path : '',redirectTo : '',pathMatch : 'full'},
   {path : '',component : HomeComponent},
   {path : 'membership-plan',component : MembershipPlanComponent},
   {path : 'watch',component : VideoPlayerComponent},
+  {path : 'cities',component : CitiesComponent},
   {path : 'coming-soon',component : ComingSoonComponent},
   {path : 'fill-up',component : FillupdetailsComponent},
 ]
