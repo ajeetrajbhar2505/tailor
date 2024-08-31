@@ -19,6 +19,7 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { FillupdetailsComponent } from './fillupdetails/fillupdetails.component';
 import { BannerComponent } from './banner/banner.component';
 import { CitiesComponent } from './cities/cities.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { CitiesComponent } from './cities/cities.component';
     BannerComponent,
     CitiesComponent
   ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },WebService],
   bootstrap: [AppComponent],
   exports :[FillupdetailsComponent]

@@ -55,3 +55,21 @@ h2 {
 .like-icon:hover {
     background-color: rgba(255, 255, 255, 1);
 }
+
+.filters
+{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.filter-info{
+    position: absolute;
+    bottom: 50px;
+    font-size: 14px;
+    color: #00796b;
+}
+.form-select-sm{
+    border-radius: 7px;
+    font-size: 14px;
+    color: #00796b;
+}

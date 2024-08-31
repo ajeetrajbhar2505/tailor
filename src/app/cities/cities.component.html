@@ -1,5 +1,7 @@
 <div class="container">
-    <h2>Popular Cities in India</h2>
+    <div class="header mb-3">
+        <i class="fa fa-angle-left" routerLink="/"></i>
+    </div>
     <div class="city-grid">
         <div class="city-card" routerLink="/watch">
             <img src="assets/places/TajMahal.jpg" alt="Taj Mahal">
@@ -31,5 +33,28 @@
         <div class="city-card" routerLink="/watch">
             <img src="assets/places/Elefantastic.jpg" alt="Elefantastic">
         </div>
+    </div>
+    <div class="proceed bottom-fixed">
+        <p class="filter-info">Filter Locations & Budget</p>
+      <div class="filters">
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected> Location</option>
+            <option value="Taj Mahal">Taj Mahal</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Swaminarayan Akshardham">Swaminarayan Akshardham</option>
+            <option value="Golden Temple">Golden Temple</option>
+            <option value="Humayun Tomb">Humayun Tomb</option> <!-- Corrected this one -->
+            <option value="Tirumala Temple">Tirumala Temple</option>
+            <option value="ISKCON Temple Bangalore">ISKCON Temple Bangalore</option>
+            <option value="Gurudwara Bangla Sahib">Gurudwara Bangla Sahib</option>
+            <option value="Agra Fort">Agra Fort</option>
+            <option value="Elefantastic">Elefantastic</option>
+        </select>
+        
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected>Price range</option>
+            <option *ngFor="let data of prices" [value]="data">{{data | currency : 'INR'}}</option>
+        </select>
+      </div>
     </div>
 </div>
