@@ -4,6 +4,8 @@
         <div class="view-icons">
         </div>
     </header>
+    <app-banner></app-banner>
+
     <div class="membership-options">
         <label class="membership-card monthly {{memvershipPlan.monthly?'active':''}}"
             (click)="activateCard('monthly','8')">
@@ -37,7 +39,6 @@
         </label>
     </div>
 
-    <app-banner></app-banner>
     <div class="proceed">
         <button class="pay-now bottom-fixed">Pay Now {{totalprice | currency}}</button>
     </div>
