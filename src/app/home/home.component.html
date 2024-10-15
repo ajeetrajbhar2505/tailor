@@ -1,86 +1,101 @@
-<div class="overlay {{active?'active':''}}"></div>
-<div class="sidebar {{active?'active':''}}">
-    <div class="sidebar-header">
-        <h2>Menu</h2>
-        <i class="fa fa-close" (click)="this.active = !this.active"></i>
-    </div>
-    <div class="sidebar-menu">
-        <a href="#"><i class="fa fa-user"></i>Profile</a>
-        <a href="#"><i class="fa fa-cog"></i>Settings</a>
-        <a href="#"><i class="fa fa-sign-out"></i>Logout</a>
 
-    </div>
-</div>
-
-<div class="coverer">
-    <header>
-        <i class="fa fa-bars menu-icon" (click)="this.active = !this.active"></i>
-        <i class="fa fa-bell notification-icon"></i>
+  <div class="container-fluid app-container">
+    <header class="d-flex justify-content-between align-items-center p-3">
+      <h2 class="app-title">Samgri</h2>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Samgri List</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Donations</a></li>
+        </ul>
+      </nav>
     </header>
-    <main>
-        <section class="welcome">
-            <h1>Explore</h1>
-            <p>Find the place for yourself</p>
-            <app-banner></app-banner>
-        </section>
-        <section class="subjects">
-            <h2>Places</h2>
-            <div class="subject-tags">
-                <button *ngFor="let data of places;" (click)="setAllActive(); data.active = true"
-                    [class]="data.active?'active':''">{{data.name}}</button>
-            </div>
-        </section>
-        <section class="popular-courses">
-            <div class="courses">
-                <div class="course-card" routerLink="/cities"
-                    style="background-image: url('assets/places/India.jpg');background-size: cover;">
-                    <button>India <i class="fa fa-map-marker"></i></button>
+
+    <!-- Main Content -->
+    <main class="mt-4">
+      <section class="samgri-section text-center">
+        <h3>Samgri List</h3>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rice</td>
+                <td>50kg</td>
+                <td>
+                  <button class="btn btn-warning btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+              </tr>
+              <!-- More rows can be added here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Donations Section -->
+      <section class="donations-section text-center mt-4">
+        <h3>Donations</h3>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th>Donor Name</th>
+                <th>Item Donated</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Doe</td>
+                <td>Flour</td>
+                <td>20kg</td>
+                <td>
+                  <button class="btn btn-warning btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+              </tr>
+              <!-- More rows can be added here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Overview Chart -->
+      <section class="mt-5">
+        <h4 class="text-center">Overview</h4>
+        <div class="chart-container">
+          
+          <div class="chatcontainer"> 
+            <div class="piechart">
+                <div class="common border"></div>
+                <div class="common base"></div>
+                <div class="common slice slice_1_c">
+                <div class="common slice slice_1_w"></div>
                 </div>
-                <div class="course-card" routerLink="/cities"
-                    style="background-image: url('assets/places/Span.jpg');background-size: cover;">
-                    <button>Span <i class="fa fa-map-marker"></i></button>
+                <div class="common slice slice_2_c">
+                  <div class="common slice slice_2_w"></div>
                 </div>
-                <div class="course-card" routerLink="/cities"
-                    style="background-image: url('assets/places/Maldives.jpg');background-size: cover;">
-                    <button>Maldives <i class="fa fa-map-marker"></i></button>
+                <div class="common slice slice_3_c">
+                  <div class="common slice slice_3_w"></div>
                 </div>
-                <div class="course-card" routerLink="/cities"
-                    style="background-image: url('assets/places/French Polynesia.jpg');background-size: cover;">
-                    <button>French Polynesia <i class="fa fa-map-marker"></i></button>
+              <div class="common slice slice_4_c">
+                  <div class="common slice slice_4_w"></div>
                 </div>
-            </div>
-        </section>
-        <app-banner></app-banner>
-        <section class="popular-courses">
-            <h2>Recent Travel Plans</h2>
-            <div class="courses">
-                <div class="course-card" routerLink="/watch"
-                    style="background-image: url('assets/places/Goa.jpg');background-size: cover;">
-                    <button>Join <i class="fa fa-handshake-o"></i></button>
-                </div>
-                <div class="course-card" routerLink="/watch"
-                    style="background-image: url('assets/places/Manali.jpg');background-size: cover;">
-                    <button>Join <i class="fa fa-handshake-o"></i></button>
-                </div>
-                <div class="course-card" routerLink="/watch"
-                    style="background-image: url('assets/places/Ladakh.jpg');background-size: cover;">
-                    <button>Join <i class="fa fa-handshake-o"></i></button>
-                </div>
-                <div class="course-card" routerLink="/watch"
-                    style="background-image: url('assets/places/Udaipur-.jpg');background-size: cover;">
-                    <button>Join <i class="fa fa-handshake-o"></i></button>
-                </div>
-                <div class="course-card" routerLink="/watch"
-                    style="background-image: url('assets/places/Gateway of India.jpg');background-size: cover;">
-                    <button>Join <i class="fa fa-handshake-o"></i></button>
-                </div>
-            </div>
-            <footer class="bottom-fixed">
-                <i class="fa fa-home" routerLink="/"></i>
-                <i class="fa fa-heart" routerLink="/"></i>
-                <i class="fa fa-handshake-o" routerLink="/"></i>
-                <i class="fa fa-user"></i>
-            </footer>
-        </section>
+                <p class="label slice_1_label">Sporadic Breast Cancer 65%</p>
+            <p class="label slice_2_label">Familial Breast Cancer 25%</p>
+                <p class="label slice_3_label">Hereditary Breast Cancer 10%</p>
+          </div>
+        </div>
+        </div>
+      </section>
     </main>
-</div>
+  </div>
+

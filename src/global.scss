@@ -1,976 +1,252 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
 
-/* Core CSS required for Ionic components to work properly */
-@import "@ionic/angular/css/core.css";
 
-/* Basic CSS for apps built with Ionic */
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-@import "@ionic/angular/css/display.css";
-
-/* Optional CSS utils that can be commented out */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
-
-#white-background {
-  --background: white;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset !important;
-
-}
-
-* {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-pre {
-  margin: unset !important;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-.ion-page {
-  padding: 25px;
-  background-color: #c7c9cd4a;
-}
-
+/* style.css */
 body {
-  padding: 10px;
+  background-color: #181b20;
+  color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+  perspective: 1000px;
+  
 }
 
-.container {
-  max-width: 400px;
-  height: 900px;
-  margin: 0 0 60px 0;
-  border-radius: 15px;
-  overflow: auto;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 480px) {
-  .container {
-    width: 100%;
-    border-radius: 0;
-    box-shadow: unset !important;
-    border-radius: unset !important;
-    padding: unset !important;
-  }
+.app-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f8f9fa;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 15px;
-}
-header a {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  color: #333;
-  text-decoration: none;
-}
-
-.menu-icon,
-.notification-icon {
-  font-size: 24px;
-  color: #333;
-}
-
-
-.welcome p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.trial-banner {
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 15px;
-  padding-right: 25px;
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.trial-text h2 {
-  margin: 0;
-  font-size: 18px;
-  color: #00796b;
-}
-
-.trial-text p {
-  font-size: 14px;
-  color: #00796b;
-  margin: 10px 0;
-}
-
-.trial-text button {
-  background: rgb(250 91 48);
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.trial-image {
-  position: absolute;
-  right: 20px;
-  bottom: 3px;
-  img {
-  border-radius: 50%;
-  margin-left: 15px;
-  width: 133px;
-}}
-
-.benefits-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.benefits-list li {
-  font-size: 16px;
-  color: #666;
-  display: flex;
-  align-items: center;
-}
-
-.benefits-list li:before {
-  content: "✔";
-  color: rgb(250 91 48);
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.subjects {
-  margin: 20px 0;
-}
-
-.subjects h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.subject-tags {
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-  margin: 10px 0 10px 0;
-}
-
-.subject-tags button {
-  border: none;
-  padding: 10px 15px;
-  border-radius: 20px;
-  cursor: pointer;
-  color: #00796b;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  /* Ensure text doesn't wrap */
-}
-
-.subject-tags button .fa {
-  margin-right: 10px;
-  font-size: 15px;
-  color: #00796b;
-}
-
-.subject-tags button:hover {
-  color: #fff;
-  background-color: #777;
-
-  .fa {
-    color: #fff;
-  }
-}
-
-/* Hide scrollbar for Webkit browsers */
-.subject-tags::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for Firefox */
-.subject-tags {
-  scrollbar-width: none;
-  /* Firefox */
-}
-
-
-
-
-.subject-tags .active {
-  background-color: #777;
-  color: #d7d8da;
-
-  .fa {
-    color: #fff;
-  }
-}
-
-.popular-courses {
-  margin: 20px 0;
-}
-
-.popular-courses h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.courses {
-  display: flex;
-  overflow-x: auto;
-  gap: 15px;
-  white-space: nowrap;
-
-  /* Prevents wrapping of flex items */
-  .fa {
-    font-size: 15px;
-  }
-}
-
-.course-card {
-  align-items: center;
-  // background-color: #e0f7fa;
-  background: #eaf3f9;
-  border-radius: 10px;
-  flex: 1;
-  border-radius: 5px;
-  min-width: 200px;
-  height: 120px;
-  position: relative;
-  /* Ensures a minimum width for the course cards */
-}
-
-.course-card button {
-  // background-color: #00796b;
-  background: #fff;
-  color: #333;
-  border: none;
-  padding: 7px 7px;
-  border: 5px;
-  border-radius: 6px;
-  cursor: pointer;
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-}
-
-
-.courses::-webkit-scrollbar {
-  display: none;
-}
-
-.courses {
-  scrollbar-width: none;
-}
-
-.course-card {
-  align-items: center;
-  background-color: #e0f7fa;
-  border-radius: 10px;
-  flex: 1;
-}
-
-.course-card h3 {
-  margin: 0;
-  font-size: 16px;
-  color: #00796b;
-}
-
-.course-card p {
-  font-size: 14px;
-  color: #00796b;
-}
-
-.your-courses {
-  margin: 20px 0;
-}
-
-.your-courses h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.your-courses .course-card img {
-  width: 100px;
-  margin-bottom: 20px;
-  border-radius: 15%;
-}
-
-main {
-  overflow: auto;
-  height: 90vh;
-  padding-bottom: 50px;
-}
-
-
-.bottom-fixed {
-  position: fixed;
-  bottom: -15px;
-  left: 8px;
-  right: 8px;
-  border-radius: 20px;
+  background: linear-gradient(145deg, #343a40, #3f4449);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
   padding: 15px;
 }
 
-footer {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-  background-color: #fff;
-  margin-bottom: 20px;
-}
-
-footer i {
-  font-size: 24px;
-  color: #333;
-}
-
-footer i:first-child {
-  color: #00796b;
-}
-
-
-.fa {
-  font-size: 24px;
-  color: #979797;
-}
-
-.profile {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.profile img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-.profile h2 {
-  margin: 10px 0 5px;
-  font-size: 20px;
-  color: #333333;
-}
-
-.profile p {
-  margin: 0;
-  font-size: 14px;
-  color: #666666;
-}
-
-.top-courses {
-  margin-top: 20px;
-}
-
-.top-courses h3 {
-  display: inline-block;
-  margin: 0;
-  font-size: 16px;
-  color: #333333;
-}
-
-.top-courses .see-all {
-  float: right;
-  font-size: 14px;
-  color: #333333;
-  text-decoration: none;
-}
-
-.courses {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.course {
-  flex: 1;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: #f0f0f0;
-  text-align: center;
-}
-
-.course h4 {
-  margin: 10px 0 5px;
-  font-size: 14px;
-  color: #333333;
-}
-
-.course p {
-  margin: 5px 0;
-  font-size: 12px;
-  color: #666666;
-}
-
-.course i {
-  font-size: 24px;
-  color: #333333;
-  ;
-}
-
-.skills {
-  margin-top: 20px;
-}
-
-.skills h3 {
-  font-size: 16px;
-  color: #333333;
-}
-
-.rating {
-  margin-top: 20px;
-}
-
-.rating h3 {
-  font-size: 16px;
-  color: #333333;
-  margin: 0;
-}
-
-.stars {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.stars img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-
-.stars span {
-  font-size: 14px;
-  color: #666666;
-  margin-right: 10px;
-}
-
-.stars .score {
-  margin-left: auto;
-  color: #f39c12;
-
-  .fa {
-    font-size: 15px;
-  }
-}
-
-.description {
-  margin-top: 20px;
-}
-
-.description h3 {
-  font-size: 16px;
-  color: #333333;
-  margin: 0;
-}
-
-.description ul {
-  padding: 0;
-  list-style-type: none;
-  margin: 10px 0 0;
-}
-
-.description li {
-  font-size: 14px;
-  color: #666666;
-  margin-bottom: 10px;
-  padding-left: 15px;
-  position: relative;
-}
-
-.description li:before {
-  content: "\2022";
-  color: #333333;
-  ;
-  font-weight: bold;
-  display: inline-block;
-  width: 15px;
-  margin-left: -15px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-.view-icons .fa {
-  font-size: 22px;
-  /* Slightly increased font size for better visibility */
-  /* Updated color for a softer look */
-  margin-left: 15px;
-  /* Increased margin for better spacing */
-  cursor: pointer;
+.nav-link {
+  color: #adb5bd;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   transition: color 0.3s ease;
-  /* Added transition for hover effect */
 }
 
-
-.breadcrumb {
-  color: #333333;
-  margin-bottom: 20px;
-
-  .fa {
-    color: #333;
-  }
+.nav-link:hover {
+  color: #f8f9fa;
 }
 
-.folders {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding-top: 15px;
+.table {
+  background: linear-gradient(145deg, #2b2f33, #1c1f24);
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
-.folders-scrollable {
-  display: grid;
-  grid-auto-flow: column;
-  /* Enable horizontal flow */
-  grid-auto-columns: minmax(200px, 1fr);
-  /* Set minimum width for columns */
-  gap: 20px;
-  padding-top: 15px;
-  overflow-x: auto;
-  /* Enable horizontal scrolling */
-  scroll-snap-type: x mandatory;
-  /* Optional: adds snapping to each item */
+.table th, .table td {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-
-.folder {
-  color: #00796b;
-  background: #f2f4fc;
-  /* Added gradient for a more modern look */
-  padding: 15px 0 0 20px;
-  border-radius: 12px;
-  /* Slightly increased border radius for a smoother look */
-  position: relative;
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  /* Added transform transition */
-  margin-bottom: 10px;
-  /* Added margin for better spacing */
-  transform: translateY(-5px);
-  /* Added slight lift on hover */
-}
-
-.folder::before {
-  content: "";
-  position: absolute;
-  top: -11px;
-  /* Adjust based on the size of the tab */
-  left: 0px;
-  /* Align with padding */
+.btn-circle {
   width: 60px;
-  /* Width of the tab */
-  height: 20px;
-  /* Height of the tab */
-  background-color: #eef3f8;
-  /* Same as the folder background */
-  border-top-left-radius: 8px;
-  /* Smooth corner for the tab */
-  border-top-right-radius: 20px;
-  /* Smooth corner for the tab */
-  z-index: -1;
-  /* Place behind the folder */
-}
-
-
-.folder.active {
-  background: #eef3f8;
-  /* Updated active background to gradient */
-  color: #00796b;
-}
-
-.folder.active::before {
-  background-color: #eef3f8;
-  /* Match the active background */
-}
-
-.folder i.fa {
-  font-size: 28px;
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
-  /* Added transition for icon color */
-}
-
-.folder p i.fa {
-  font-size: 15px;
-}
-
-.folder.active i.fa {
-  color: #00796b;
-}
-
-.folder h2 {
-  font-size: 18px;
-  /* Increased font size for better readability */
-  margin: 0;
-  margin-bottom: 8px;
-  /* Slightly increased margin for better spacing */
-  color: #00796b;
-  transition: color 0.3s ease;
-  /* Added transition for text color */
-}
-
-.folder.active h2 {
-  color: #00796b;
-}
-
-.folder p {
-  font-size: 14px;
-  /* Increased font size for better readability */
-  color: #999;
-  transition: color 0.3s ease;
-  /* Added transition for text color */
-}
-
-.folder.active p {
-  color: #00796b;
-}
-
-.folder .options {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 18px;
-  /* Increased font size for better visibility */
-  color: #999;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  /* Added transition for color */
-}
-
-.folder .options:hover {
-  color: #00796b;
-  /* Darken color on hover */
-}
-
-.folder.active .options {
-  color: #00796b;
-}
-
-
-.video-thumbnail {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  margin-top: 15px;
-}
-
-.video-thumbnail video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
-
-
-.heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-h2 {
-  flex: 1;
-  font-size: 20px;
-  color: #333333;
-}
-
-.heading .rating {
-  font-size: 15px;
-  color: #f39c12;
-
-  .fa {
-    font-size: 15px;
-  }
-}
-
-
-.instructor-info p {
-  flex: auto;
-  display: flex;
-  align-items: center;
-  margin: 5px 0;
-}
-
-.instructor-info .fa {
-  margin-right: 10px;
-}
-
-.description p {
-  color: #666666;
-}
-
-.description a {
-  color: #007bff;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.tabs {
-  display: flex;
-  margin: 20px 0;
-  overflow-x: auto;
-}
-
-.tab {
-  flex: 1;
+  height: 60px;
+  border-radius: 50%;
   padding: 10px;
-  background: #f0f0f0;
+  margin: 10px;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), inset 0 3px 6px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-circle:hover {
+  transform: scale(1.05) translateZ(10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 5px 10px rgba(255, 255, 255, 0.15);
+}
+
+.btn-success {
+  background-image: linear-gradient(135deg, #28a745, #34d058);
   border: none;
-  cursor: pointer;
-  text-align: center;
-  color: #555555;
-  display: flex;
-  gap: 10px;
-  align-items: center;
+  color: white;
 }
 
-.tab.active {
-  color: #007bff;
-  border-bottom: 2px solid #007bff;
+.btn-primary {
+  background-image: linear-gradient(135deg, #007bff, #60a3ff);
+  border: none;
+  color: white;
 }
 
-.lessons {
-  margin: 20px 0;
+.btn-warning {
+  background-image: linear-gradient(135deg, #ffcc00, #ffbb00);
+  border: none;
+  color: black;
 }
 
-.lesson {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #e0f7fa;
-  border-radius: 10px;
-  opacity: 0.7;
-  border: 2px solid transparent;
+.btn-danger {
+  background-image: linear-gradient(135deg, #dc3545, #e94d56);
+  border: none;
+  color: white;
 }
 
-.lesson.active {
-  opacity: unset;
+.btn-warning:hover, .btn-danger:hover {
+  opacity: 0.95;
 }
 
-.lesson span {
-  font-size: 18px;
-  color: #007bff;
-  margin-right: 20px;
+.samgri-section, .donations-section {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(145deg, #2b2f33, #181b20);
 }
 
-.lesson-info {
-  flex-grow: 1;
-}
 
-.lesson-info p {
-  margin: 0;
-}
 
-.lesson-info p:not(:first-child) {
-  font-size: 13px;
-  color: #555555;
-}
 
-.play-icon {
-  width: 20px;
-  height: 20px;
-}
 
-.enroll {
-  width: 100%;
-  display: inline;
-  text-align: center;
+h3, h4 {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.graph{
   position: relative;
 }
-
-
-
-
-
-.view-icons .fa {
-  font-size: 20px;
-  margin-left: 10px;
-  cursor: pointer;
+.chatcontainer {
+  background-color: white;
+  width: 615px;
+  margin: -60px auto;
 }
 
-.last-update {
-  font-size: 14px;
-  color: #999;
-  margin-bottom: 20px;
+.logo {
+  margin-top: 3%;
+  margin-left: 5%;
 }
 
-.categories {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.QR {
+  float: right;
+  margin-top: -13%;
+  margin-right: 5%;
 }
 
-.category {
-  display: flex;
-  align-items: flex-start;
-  justify-content: start;
-  background: #eaf3f9;
-  color: #00796b;
-  padding: 10px;
-  border-radius: 10px;
-  position: relative;
-  transition: background-color 0.3s ease;
+.piechart {
+	position: relative;
+	height: 500px; 
+  width: 500px;
+  float: left;
+  margin-left: 11%;
 }
 
-.category.active {
-  background-color: #fda34b;
-  color: #fff;
-}
-
-.category .icon {
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  margin-right: 20px;
-}
-
-.category.active .icon {
-  background-color: #fff;
-}
-
-.category .icon .fa {
-  font-size: 24px;
-  color: #00796b;
-}
-
-.category .details p .fa {
-  font-size: 15px;
-  margin-right: 7px;
-  color: #00796b;
-}
-
-.category .details h2 {
-  font-size: 16px;
-  margin: 0;
-  color: #333;
-}
-
-.category.active .details h2 {
-  color: #fff;
-}
-
-.category .details p {
-  font-size: 12px;
-  color: #999;
-}
-
-.category.active .details p {
-  color: #fff;
-}
-
-.category .options {
+.common {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 16px;
-  color: #999;
-  cursor: pointer;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
 }
 
-.category.active .options {
-  color: #fff;
+.border { 
+  border: 3px solid #EEE; 
+  top: -6px; 
+  left: -6px; 
+  width: 506px; 
+  height: 506px; 
 }
 
-.mt-2 {
-  margin-top: 10px;
+.base { 
+   background: #EEE; 
 }
 
-/* Sidebar */
-.sidebar {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: -250px;
-  background-color: #FFFFFF;
-  transition: 0.3s;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+.slice {
+      /* https://www.w3schools.com/cssref/pr_pos_clip.asp */
+    clip: rect(0px, 250px, 500px, 0);   
 }
 
-.sidebar.active {
-  left: 0;
+/* eerste spie: bestaat uit een slice en een container */
+
+.slice_1_w {
+      /* met deze waarde geef je de procentuele grootte aan van de spie */
+      /* 30% weergeven */
+      /* Startpositie: 180°=50% => 1% = 3,6° => */
+      /* 30 x 3,6° = 108° */
+      /* Om 30° over te houden moeten we  180-108°=73 roteren */
+     background-color: RGBA(235, 184, 208, 1.00);
+     transform: rotate(0deg); 
+      /* vendor prefixing staat wel op autprefixer in de settings!*/
 }
 
-.sidebar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid #EFEFEF;
+.slice_1_c {
+      /* met deze waarde positioneer je de spie op de cirkel */
+	transform: rotate(-38deg);
 }
 
-.sidebar-header .fa {
-  font-size: 24px;
-  cursor: pointer;
+/* tweede spie: opnieuw een slice en een container */
+
+.slice_2_w {
+      /* met deze waarde geef je de procentuele grootte aan van de spie */
+      /* 20% weergeven */
+      /* Startpositie: 180°=50% => 1% = 3,6° => */
+      /* 20 x 3,6° = 72° */
+      /* Om 20° over te houden moeten we  180-72° roteren */
+	background-color: rgba(102,205,170,1.00);
+	transform: rotate(90deg);
 }
 
-.sidebar-menu {
-  padding: 20px;
+.slice_2_c {
+      /* met deze waarde positioneer je de spie op de cirkel */
+	transform: rotate(52deg);
 }
 
-.sidebar-menu a {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  font-size: 18px;
-  color: #333;
-  text-decoration: none;
+.slice_3_w {
+      /* met deze waarde geef je de procentuele grootte aan van de spie */
+      /* 10% weergeven */
+      /* Startpositie: 180°=50% => 1% = 3,6° => */
+      /* 10 x 3,6° = 36° */
+      /* Om 10° over te houden moeten we  180-36° roteren */
+	background-color: rgba(250,128,114,1.00);
+	transform: rotate(144deg);
 }
 
-.sidebar-menu a .fa {
-  margin-right: 10px;
+.slice_3_c {
+      /* met deze waarde positioneer je de spie op de cirkel */
+	transform: rotate(88deg);
 }
 
-.sidebar-menu a:hover {
-  background-color: #EFEFEF;
-  border-radius: 10px;
+.slice_4_w {
+      /* met deze waarde geef je de procentuele grootte aan van de spie */
+      /* 30% weergeven */
+      /* Startpositie: 180°=50% => 1% = 3,6° => */
+      /* 30 x 3,6° = 108° */
+      /* Om 30° over te houden moeten we  180-108°=73 roteren */
+     background-color: RGBA(235, 184, 208, 1.00);
+     transform: rotate(40deg); 
+      /* vendor prefixing staat wel op autprefixer in de settings!*/
 }
 
-/* Overlay */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 999;
+.slice_4_c {
+      /* met deze waarde positioneer je de spie op de cirkel */
+	transform: rotate(-132deg);
 }
 
-.overlay.active {
-  display: block;
+
+p.label {
+	color: #fff; 
+	font-family: helvetica; 
+	position: absolute;
+	border-bottom: 2px solid #fff;
+	width: 110px;
 }
 
-.fa-angle-left:before {
-  font-size: xx-large;
+.slice_1_label {
+  top: 300px;
+  left: -110px;
+  text-align: left;
+  padding: 0px 60px 0px 0px;
+}
+
+.slice_2_label {
+   top: 35px;
+   left: 380px;
+  text-align: right;
+  padding: 0px 0px 0px 60px;
+}
+
+.slice_3_label {
+    top: 170px;
+    left: 455px;
+  text-align: right;
+  padding: 0px 0px 0px 60px;
 }
